@@ -1,0 +1,248 @@
+.arena {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arena::before {
+  transition-property: background-color backdrop-filter;
+  transition-duration: 1s;
+}
+
+.board {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  border: 6px var(--color-primary) solid;
+  background-color: rgba(var(--color-highlight-rgb), 0.5);
+  
+  outline-offset: -12px;
+  outline: 2px solid rgba(var(--color-highlight-rgb), 0.5);
+  
+  min-height: 290px;
+  min-width: 350px;
+
+  padding: 40px;
+  margin: 20px 35px;
+}
+
+.board::before {
+  content: '';
+  z-index: -1;
+  
+  position: absolute;
+  top: -2px;
+  left: -2px;
+
+  outline-offset: -12px;
+  outline: 2px solid rgba(var(--color-highlight-rgb), 0.5);
+  border-radius: 25px;
+  
+  height: calc(100% + 4px);
+  width: calc(100% + 4px);
+}
+
+.title {
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 130% 50%, 50% 100%, 0 70%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+  background-color: #925ae0;
+  color: #ffffff;
+  
+  font-size: 20px;
+  text-align: center;
+  
+  margin: -48px auto 12px auto;
+  padding: 20px 30px;
+  width: 60%;
+}
+
+.title::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  content: '';
+  z-index: -1;
+  display: block;
+  
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+
+  backdrop-filter: opacity(0%);
+  background-color: #7b40d0;
+  clip-path: polygon(0 0, 100% 0, 122% 50%, 50% 100%, 0 67%);
+}
+
+.title span {
+  position: relative;
+  top: -8px;
+}
+
+.content {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.content .bet {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.content .row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 10px 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.content .row .highlight {
+  font-weight: bold;
+}
+
+.content .row .prize {
+  color: goldenrod;
+}
+
+.label {
+  margin-right: 15px;
+
+  position: relative;
+  top: 10px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+
+  text-align: center;
+}
+
+.button {
+  position: relative;
+
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #049305;
+  
+  border-radius: 25px;
+  border-bottom: 6px solid #055f05;
+  
+  cursor: pointer;
+  user-select: none;
+  padding: 12px 45px;
+
+  transition-property: border-bottom-width background-color;
+  transition-duration: 0.2s;
+}
+
+.note {
+  font-size:  40px;
+  color: #ffffff;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: #14a814;
+}
+
+.button:active {
+  border-bottom-width: 4px;
+}
+
+.link {
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+
+  color: #ffffff;
+  text-decoration: underline;
+
+  transition-duration: 0.2s;
+  transition-property: opacity;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+.card {
+  transition-duration: 0.2s;
+  transition-property: transform;
+
+  z-index: 6;
+}
+
+.battle {
+  display: none;
+  z-index: 5;
+
+  position: fixed;
+  top: 55%;
+  left: 50%;
+
+  color: #ffed85;
+  font-size: 300px;
+
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+
+  animation-name: battle-in;
+  animation-duration: 0.2s;
+}
+
+.battle svg {
+  filter: drop-shadow(0 0 20px #d6be33);
+}
+
+.arena--fighting .card {
+  transform: scale(1.2);
+}
+
+.arena--fighting {
+  position: relative;
+}
+
+.arena--fighting::before {
+  content: '';
+  z-index: 5;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  background-color: rgba(0, 0, 0, 0.87);
+  backdrop-filter: blur(5px);
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.arena--fighting .battle {
+  display: block;
+}
+
+@keyframes battle-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5) translate(-50%, -50%);
+  }
+  
+  to {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}

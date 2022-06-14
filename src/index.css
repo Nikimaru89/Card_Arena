@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Luckiest Guy', cursive;
+  
+  background-image: url(./assets/bg.jpg);
+  background-color: rgba(var(--color-primary-rgb), 0.9);
+  background-blend-mode: color-burn;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.glare-wrapper {
+  pointer-events: none;
+}
+
+:root {
+  --color-background: #000000;
+  --color-background-rgb: 0, 0, 0;
+  
+  --color-primary: #222538;
+  --color-primary-rgb: 34, 37, 56;
+
+  --color-highlight: #343a5c;
+  --color-highlight-rgb: 52, 58, 92;
+}

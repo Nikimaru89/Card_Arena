@@ -1,0 +1,201 @@
+.cardWrapper {
+  z-index: 1;
+}
+
+.card {
+  background-image: linear-gradient( 
+    rgba(231, 205, 60, 0.1),
+    rgba(231, 205, 60, 1) 90%
+  ),
+  url(../../assets/card-bg2.jpg);
+
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  padding: 10px;
+
+  min-width: 240px;
+  border-radius: 15px;
+  border: 5px solid #e7cd3c;
+
+  outline: 1px solid #e7cd3c5b;
+  outline-offset: -8px;
+
+  z-index: 100;
+  user-select: none;
+}
+
+.card__head {
+  margin-bottom: 10px;
+}
+
+.card__head .chip {
+  position: relative;
+
+  border: 3px #e7cd3c solid;
+  border-radius: 40px;
+  color: #252525;
+
+  background-color: #ffffff;
+  padding: 5px 20px 5px 50px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 150px;
+}
+
+.chip .power {
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  line-height: 2.2;
+
+  border: 3px solid #e7cd3c;
+  border-radius: 50%;
+  
+  display: inline-block;
+  
+  height: 36px;
+  width: 36px;
+  
+  color: #ffffff;
+  text-align: center;
+  background-color: #e7cd3c;
+}
+
+.unknown {
+  font-size: 80px;
+  color: white;
+  line-height: 2;
+}
+
+.chip span:last-of-type {
+  color: rgb(53, 189, 26);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chip span:last-of-type svg {
+  font-size: 13px;
+  margin-right: 5px;
+}
+
+.card__content {
+  text-align: center;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  height: 179px;
+  backdrop-filter: blur(8px);
+  background-color: #ffffff6e;
+
+  border: 2px solid #e7cd3c8a;
+  outline: 2px solid #e7cd3c8a;
+  outline-offset: -6px;
+}
+
+.logo {
+  width: 150px;
+  max-height: 175px;
+}
+
+.meta {
+  color: white;
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.metaChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10px;
+  margin-right: 6px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+.metaChip--energy {
+  color: rgb(190, 137, 38);
+}
+
+.metaChip--battle {
+  color: rgb(233, 59, 59);
+}
+
+.meta > .metaChip:last-of-type {
+  margin-right: 0;
+  margin-left: auto;
+  color: rgb(61, 61, 61);
+}
+
+.meta > .metaChip:last-of-type::before {
+  content: '#';
+  font-family: Arial, Helvetica, sans-serif;
+
+  position: relative;
+  top: 1px;
+}
+
+.card__foot {
+  visibility: hidden;
+
+  padding: 35px;
+  margin-top: 10px;
+  border-radius: 25px;
+  
+  color: transparent;
+  background-color: transparent;
+
+  font-size: 20px;
+  text-align: center;
+}
+
+.card--winner .card__foot {
+  visibility: visible;
+
+  color: #ffffff;
+  background-color: #049305;
+}
+
+.card--loser .card__foot {
+  visibility: visible;
+
+  color: #ffffff;
+  background-color: #c30d0c;
+}
+
+.card-points {
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.card-points .highlight {
+  color: #fdcc05;
+}
+
+.algo-cost {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.algo-cost .highlight {
+  color: #1d8d23;
+}
